@@ -1,0 +1,26 @@
+.conten-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .inputs {
+
+        margin: 15px 0;
+        margin-left: 8px;
+        height: 40px;
+        width: 200px;
+        border-radius: 8px;
+        border: solid 1px gray;
+        padding: 5px;
+    }
+
+    .guardar{
+        border: none;
+        border-radius: 8px;
+        height: 40px;
+        width: 70px;
+        background-color: rgb(88, 211, 6);
+        color: #ffffff;
+    }
+
+}

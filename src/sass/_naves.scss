@@ -1,0 +1,41 @@
+.content-naves {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .home {
+        font-size: 2.6rem;
+    }
+
+    .title {
+        margin-top: 3%;
+        font-size: 2.6rem;
+    }
+
+    .table {
+        padding: 2% 10%;
+
+        .bt {
+            margin-bottom: 20px;
+        }
+
+        .buscador {
+            input {
+                margin: 15px 0;
+                margin-left: 8px;
+                height: 40px;
+                width: 200px;
+                border-radius: 8px;
+                border: solid 1px gray;
+                padding: 5px;
+            }
+        }
+
+        .ubica{
+            display: flex;
+        }
+
+        
+    }
+}

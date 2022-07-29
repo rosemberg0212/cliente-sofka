@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$black: rgba(0,0,0,0.7);
+
+@import 'home';
+@import 'card';
+@import 'naves';
+@import 'modal';
+@import 'footer';

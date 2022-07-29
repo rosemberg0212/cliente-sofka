@@ -1,0 +1,25 @@
+.carta{
+    width: 220px;
+    height: 220px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/acercamiento.webp');
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover{
+        transform: scale(1.15);
+    }
+
+    h3{
+        color: #ffffff;
+        font-size: 1rem;
+        width: 90%;
+    }
+}
