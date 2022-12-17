@@ -62,36 +62,36 @@ const Nave = () => {
         e.preventDefault();
 
         //validacion del formulario
-        if(actividad.trim() === '' || nombre.trim() === '' || entidad.trim() === '' || tipo.trim() === ''){
+        if (actividad.trim() === '' || nombre.trim() === '' || entidad.trim() === '' || tipo.trim() === '') {
             Swal.fire({
                 icon: 'error',
                 title: 'Falta un campo obligatorio.',
                 showConfirmButton: true,
                 // timer: 1800
-              }) 
-              return
+            })
+            return
         }
 
         //petecion para crear nueva nave
         registrarNave({
-            actividad, 
-            nombre, 
-            entidad, 
-            tipo, 
+            actividad,
+            nombre,
+            entidad,
+            tipo,
             combustible
         })
         setShow(false)
         setnaves({
-            actividad: '', 
-            nombre: '', 
-            entidad: '', 
-            tipo: '', 
+            actividad: '',
+            nombre: '',
+            entidad: '',
+            tipo: '',
             combustible: ''
         })
     }
 
     //bandera para borrar elementos
-    const borrar = (id)=>{
+    const borrar = (id) => {
         Swal.fire({
             title: 'Esta seguro que desea borrar?',
             text: "Esto no se puede revertir!",
@@ -100,18 +100,24 @@ const Nave = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Sí, Borrar!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 deleteNaves(id)
             }
-          })
+        })
     }
     //metodo para filtrar las naves
-    if (!search) {
-        var results = !encontraT.nombre ? naves : naves.filter((dato) => dato.tipo.toLowerCase().includes(encontraT.nombre.toLocaleLowerCase()))
+    if (!encontraT) {
+        console.log("cargando")
+        return
     } else {
-        results = !search ? naves : naves.filter((dato) => dato.nombre.toLowerCase().includes(search.toLocaleLowerCase()))
+        if (!search) {
+            var results = !encontraT.nombre ? naves : naves.filter((dato) => dato.tipo.toLowerCase().includes(encontraT.nombre.toLocaleLowerCase()))
+        } else {
+            results = !search ? naves : naves.filter((dato) => dato.nombre.toLowerCase().includes(search.toLocaleLowerCase()))
+        }
     }
+
 
     return (
         <div className='content-naves'>
@@ -227,7 +233,7 @@ const Nave = () => {
                                 <td>{nave.entidad}</td>
                                 <td>{nave.combustible}</td>
                                 <td>
-                                    <Button variant="danger" onClick={()=>borrar(nave._id)}>Borrar</Button>{' '}
+                                    <Button variant="danger" onClick={() => borrar(nave._id)}>Borrar</Button>{' '}
                                 </td>
                             </tr>
                         </tbody>

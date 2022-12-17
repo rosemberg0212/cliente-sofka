@@ -1,10 +1,13 @@
-import React from 'react'
-import Nave from '../components/resto/Nave'
+import React, { Suspense, lazy } from 'react'
+// import Nave from '../components/resto/Nave'
+const Nave = lazy(() => import('../components/resto/Nave'))
 
 const Naves = () => {
   return (
     <div>
-        <Nave/>
+      <Suspense fallback={<h1>Cargando...</h1>}>
+        <Nave />
+      </Suspense>
     </div>
   )
 }

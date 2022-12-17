@@ -24,7 +24,7 @@ const NaveState = (props) => {
   //Registrar nueva nave
   const registrarNave = useCallback(async (datos) => {
     try {
-      const res = await axios.post('https://treaning-sofka.herokuapp.com/api/naves', datos);
+      const res = await axios.post('https://api-training.onrender.com/api/naves', datos);
       console.log(res.data);
       dispatch({
         type: CREAR_NAVE,
@@ -48,7 +48,7 @@ const NaveState = (props) => {
   //metodo para obtener naves
   const getNaves = useCallback(async () => {
     try {
-      const res = await axios.get('https://treaning-sofka.herokuapp.com/api/naves');
+      const res = await axios.get('https://api-training.onrender.com/api/naves');
       console.log(res.data);
       dispatch({
         type: OBTENER_NAVE,
@@ -63,7 +63,7 @@ const NaveState = (props) => {
   //metodo para obtener los tipos de naves
   const getNavesTipo = useCallback(async () => {
     try {
-      const res = await axios.get('https://treaning-sofka.herokuapp.com/api/tipos');
+      const res = await axios.get('https://api-training.onrender.com/api/tipos');
       console.log(res.data);
       dispatch({
         type: OBTENER_TIPO_NAVE,
@@ -77,7 +77,7 @@ const NaveState = (props) => {
   //metodo para borrar naves
   const deleteNaves = useCallback(async (id) => {
     try {
-      const res = await axios.delete(`https://treaning-sofka.herokuapp.com/api/naves/${id}`);
+      const res = await axios.delete(`https://api-training.onrender.com/api/naves/${id}`);
       console.log(res.data);
       dispatch({
         type: BORRAR_NAVE,
